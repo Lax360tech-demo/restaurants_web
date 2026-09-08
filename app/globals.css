@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #FAF5EC;
+  --bg-champagne: #F7E7CE;
+  --bg-surface: #FFFDF9;
+  --card-bg: rgba(255, 253, 249, 0.92);
+  --card-border: rgba(222, 195, 152, 0.65);
+  --text-primary: #23120B;
+  --text-muted: #5C4334;
+  --accent-gold: #B87A1E;
+  --accent-gold-light: #D89A3A;
+  --accent-red: #B91C1C;
+  --accent-amber: #C77A24;
+}
+
+.dark {
+  --bg-main: #070302;
+  --bg-champagne: #170A04;
+  --bg-surface: #120703;
+  --card-bg: rgba(22, 10, 6, 0.85);
+  --card-border: rgba(216, 154, 58, 0.18);
+  --text-primary: #F7F3E9;
+  --text-muted: #A3998B;
+  --accent-gold: #D89A3A;
+  --accent-gold-light: #F3C66F;
+  --accent-red: #B91C1C;
+  --accent-amber: #C77A24;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-outfit), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.dark body {
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(199, 122, 36, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(185, 28, 28, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(216, 154, 58, 0.07) 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* Luxury Custom Selection */
+::selection {
+  background-color: #EA580C;
+  color: #FFFFFF;
+}
+
+/* Modern Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF5EC;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #090403;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DEC398;
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #3A2216;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CCA875;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #D89A3A;
+}
+
+/* Subtle Cinematic Glow & Glass Utilities */
+@layer utilities {
+  .text-glow-gold {
+    text-shadow: 0 0 20px rgba(216, 154, 58, 0.45);
+  }
+  
+  .text-glow-red {
+    text-shadow: 0 0 20px rgba(185, 28, 28, 0.45);
+  }
+
+  .border-gold-subtle {
+    border-color: rgba(216, 154, 58, 0.2);
+  }
+
+  .bg-glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--card-border);
+  }
+
+  .bg-glass-nav {
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .cinematic-vignette {
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.85);
+  }
+}
